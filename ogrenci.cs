@@ -1,10 +1,10 @@
 class ogrenci
     {
-        private string _ad="";
-        private string _soyad="";
-        private string _no="";
-        private double _ort=0;
-        
+        private string _ad = "";
+        private string _soyad = "";
+        private string _no = "";
+        private double _ort = 0;
+
 
         #region Accesor ve Mutator
         public string GetAd()              //public string Ad {get; set; }
@@ -60,7 +60,7 @@ class ogrenci
         }
         public ogrenci()
         {
-            
+
         }
 
         public override string ToString()
@@ -75,17 +75,25 @@ class ogrenci
             return k3;
         }
 
-        public static ogrenci operator +(ogrenci k1)
-        {
-            ogrenci k3 = new ogrenci();
-            k3._ort += k1._ort;
-            return k3;
-        }
+        //public static ogrenci operator +(ogrenci k1)
+        //{
+        //    //ogrenci k3 = new ogrenci();
+        //    //k3._ort += k1._ort;
+        //   // return k3;
+        //    return k1;
+        //}
 
         public static ogrenci operator /(ogrenci k1, double sayi)
         {
             ogrenci k3 = new ogrenci();
             k3._ort = k1._ort / sayi;
             return k3;
+        }
+
+        public static double operator +(ogrenci k1, double sayi)
+        {
+            ogrenci k3 = new ogrenci();
+            k3._ort = k1._ort + sayi;
+            return k3._ort;
         }
     }
